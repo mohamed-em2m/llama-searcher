@@ -20,4 +20,7 @@ dependencies = [
     "requests",
     "dynaconf",
     "pre-commit>=4.5.1",
+    "fastapi",
+    "uvicorn",
+    "mcp",
 ]

@@ -67,11 +67,62 @@ results = get_events(
 print(results)
 ```
 
-### Supported Engines
-
-- **Neural**: `firecrawl`, `exa`, `tavily`, `perplexity`.
-- **SERP**: `google`, `bing`, `serpapi`, `serper`, `brave`, `zenserp`.
 - **Special**: `multi` (aggregates top providers).
+
+---
+
+## 🌐 FastAPI & REST Access
+
+`llama-search` can be run as a standalone web service, allowing you to integrate it with any language or platform.
+
+### Running the API
+
+```bash
+uv run python -m llama_search.api.app
+```
+
+The server will start at `http://0.0.0.0:8000`.
+
+### Endpoints
+
+- **GET `/search?q=query&engine=multi`**: Returns search results.
+- **POST `/search`**: Accepts a JSON body: `{"query": "...", "engine": "multi"}`.
+
+---
+
+## 🤖 MCP (Model Context Protocol) Support
+
+Integrate `llama-search` directly into AI agents like Claude Desktop or other MCP-compatible platforms.
+
+### Running the MCP Server
+
+```bash
+uv run python -m llama_search.mcp_server
+```
+
+### Integration with Claude Desktop
+
+Add this to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "llama-search": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/llm-search-tool",
+        "run",
+        "python",
+        "-m",
+        "llama_search.mcp_server"
+      ]
+    }
+  }
+}
+```
+
+Now Claude can natively search the web using all 10+ engines!
 
 ---
 

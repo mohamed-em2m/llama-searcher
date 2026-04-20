@@ -61,6 +61,18 @@ result = get_events(
 print(result)
 ```
 
+### 3. Running the API
+
+```bash
+uv run python -m llama_search.api.app
+```
+
+### 4. Running the MCP Server (for AI Agents)
+
+```bash
+uv run python -m llama_search.mcp_server
+```
+
 ## 🏗️ Architecture
 
 ```text
