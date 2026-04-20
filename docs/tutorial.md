@@ -81,10 +81,10 @@ The project is built with a modular package structure:
 
 - **`llama_search/api/`**: The standard entry point for tool integration.
 - **`llama_search/core/`**:
-    - `search_providers.py`: Implementation of all search engine logic.
-    - `fetchers.py`: Static and Dynamic (Playwright) web scraping.
-    - `cleaners.py`: Semantic HTML parsing into clean text.
-    - `rag.py`: Similarity search and embedding logic.
+  - `search_providers.py`: Implementation of all search engine logic.
+  - `fetchers.py`: Static and Dynamic (Playwright) web scraping.
+  - `cleaners.py`: Semantic HTML parsing into clean text.
+  - `rag.py`: Similarity search and embedding logic.
 - **`llama_search/services/`**: High-level orchestration for scraping tasks and event extraction.
 - **`llama_search/agents/`**: AI agents for summarization and analysis.
 
