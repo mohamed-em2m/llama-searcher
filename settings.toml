@@ -1,0 +1,20 @@
+[default]
+OPENAI_SYNC_BASE_URL_GEMINI = "https://generativelanguage.googleapis.com/v1beta/models"
+OPENAI_ASYNC_BASE_URL_GEMINI = "https://generativelanguage.googleapis.com/v1beta/openai/"
+BING_SEARCH_ENDPOINT = "https://api.bing.microsoft.com/v7.0/search"
+FIRECRAWL_ENDPOINT = "https://api.firecrawl.dev/v1/search"
+EXA_ENDPOINT = "https://api.exa.ai/search"
+TAVILY_ENDPOINT = "https://api.tavily.com/search"
+PERPLEXITY_ENDPOINT = "https://api.perplexity.ai/chat/completions"
+SERPAPI_ENDPOINT = "https://serpapi.com/search"
+SERPER_ENDPOINT = "https://google.serper.dev/search"
+BRAVE_ENDPOINT = "https://api.search.brave.com/res/v1/web/search"
+ZENSERP_ENDPOINT = "https://app.zenserp.com/api/v2/search"
+
+filters = [
+    "facebook.com", "instagram.com", "twitter.com", "x.com", "linkedin.com", "tiktok.com",
+    "reddit.com", "quora.com", "medium.com", "amazon.com", "ebay.com", "walmart.com", "aliexpress.com",
+    "booking.com", "airbnb.com", "expedia.com", "netflix.com", "spotify.com", "youtube.com",
+    "nytimes.com", "bloomberg.com", "forbes.com", "washingtonpost.com", "morningstar.com", "yahoo.com",
+    "nasdaq.com", "fidelity.com", "esquireme.com", "vogue.com", "pinterest.com", "zillow.com", "producthunt.com"
+]

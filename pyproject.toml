@@ -1,0 +1,23 @@
+[project]
+name = "llama-search"
+version = "0.1.0"
+description = "A powerful, modular RAG-orchestrator that aggregates 10+ search engines (Google, Bing, Firecrawl, Exa, Tavily) into LLM-ready markdown."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp",
+    "httpx",
+    "playwright",
+    "lxml",
+    "beautifulsoup4",
+    "langchain-core",
+    "langchain-google-genai",
+    "tiktoken",
+    "google-api-python-client",
+    "openai",
+    "nest-asyncio",
+    "pytz",
+    "requests",
+    "dynaconf",
+    "pre-commit>=4.5.1",
+]
