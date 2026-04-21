@@ -3,8 +3,8 @@ from typing import List, Dict, Any
 import requests
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from llama_search.utils.logger import logger
-from llama_search.utils.config import settings
+from llama_searcher.utils.logger import logger
+from llama_searcher.utils.config import settings
 
 
 class BaseSearchProvider(abc.ABC):

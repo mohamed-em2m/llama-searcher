@@ -3,8 +3,8 @@ from pydantic import BaseModel
 from typing import Optional
 import uvicorn
 
-from llama_search.api.search import get_events
-from llama_search.utils.logger import logger
+from llama_searcher.api.search import get_events
+from llama_searcher.utils.logger import logger
 
 app = FastAPI(
     title="llama-searcher API",

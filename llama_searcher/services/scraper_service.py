@@ -3,14 +3,14 @@ import aiohttp
 from typing import Sequence, Optional, Union
 from playwright.async_api import async_playwright
 
-from llama_search.core.fetchers import (
+from llama_searcher.core.fetchers import (
     fetch_content_static,
     async_fetch_dynamic,
     _sync_scrape_link,
 )
-from llama_search.core.cleaners import get_html_content
-from llama_search.agents.analysis_agent import summarize_agent
-from llama_search.utils.logger import log_print
+from llama_searcher.core.cleaners import get_html_content
+from llama_searcher.agents.analysis_agent import summarize_agent
+from llama_searcher.utils.logger import log_print
 
 
 async def _scrape_task_static(

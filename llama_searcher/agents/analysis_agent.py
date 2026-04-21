@@ -4,7 +4,7 @@ from datetime import datetime
 import pytz
 import logging
 import openai
-from llama_search.utils.logger import log_print
+from llama_searcher.utils.logger import log_print
 
 
 class AnalysisAgent:

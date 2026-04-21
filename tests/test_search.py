@@ -1,4 +1,4 @@
-from llama_search.api.app import app
+from llama_searcher.api.app import app
 from fastapi.testclient import TestClient
 
 client = TestClient(app)

@@ -4,7 +4,7 @@ from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import tiktoken
-from llama_search.utils.logger import logger
+from llama_searcher.utils.logger import logger
 
 encoding = tiktoken.get_encoding("cl100k_base")
 embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")

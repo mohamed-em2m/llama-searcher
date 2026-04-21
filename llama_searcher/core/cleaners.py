@@ -1,7 +1,7 @@
 import re
 from typing import Tuple, Optional
 from lxml import html
-from llama_search.utils.logger import logger
+from llama_searcher.utils.logger import logger
 
 SECTION_TAGS = {
     "section",

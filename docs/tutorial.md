@@ -56,7 +56,7 @@ PERPLEXITY_API_KEY = "your_perplexity_key"
 The core power of `llama-searcher` lies in the `get_events` tool. It allows you to query multiple engines with a single call.
 
 ```python
-from llama_search.api.search import get_events
+from llama_searcher.api.search import get_events
 
 # Aggregate results from Google, Exa, and Tavily
 results = get_events(
@@ -78,7 +78,7 @@ print(results)
 ### Running the API
 
 ```bash
-uv run python -m llama_search.api.app
+uv run python -m llama_searcher.api.app
 ```
 
 The server will start at `http://0.0.0.0:8000`.
@@ -97,7 +97,7 @@ Integrate `llama-searcher` directly into AI agents like Claude Desktop or other 
 ### Running the MCP Server
 
 ```bash
-uv run python -m llama_search.mcp_server
+uv run python -m llama_searcher.mcp_server
 ```
 
 ### Integration with Claude Desktop
@@ -115,7 +115,7 @@ Add this to your `claude_desktop_config.json`:
         "run",
         "python",
         "-m",
-        "llama_search.mcp_server"
+        "llama_searcher.mcp_server"
       ]
     }
   }
@@ -130,20 +130,20 @@ Now Claude can natively search the web using all 10+ engines!
 
 The project is built with a modular package structure:
 
-- **`llama_search/api/`**: The standard entry point for tool integration.
-- **`llama_search/core/`**:
+- **`llama_searcher/api/`**: The standard entry point for tool integration.
+- **`llama_searcher/core/`**:
   - `search_providers.py`: Implementation of all search engine logic.
   - `fetchers.py`: Static and Dynamic (Playwright) web scraping.
   - `cleaners.py`: Semantic HTML parsing into clean text.
   - `rag.py`: Similarity search and embedding logic.
-- **`llama_search/services/`**: High-level orchestration for scraping tasks and event extraction.
-- **`llama_search/agents/`**: AI agents for summarization and analysis.
+- **`llama_searcher/services/`**: High-level orchestration for scraping tasks and event extraction.
+- **`llama_searcher/agents/`**: AI agents for summarization and analysis.
 
 ---
 
 ## 🛠️ Developer Guide: Adding a Search Provider
 
-Adding a new engine is easy! Simply implement the `BaseSearchProvider` interface in `llama_search/core/search_providers.py`.
+Adding a new engine is easy! Simply implement the `BaseSearchProvider` interface in `llama_searcher/core/search_providers.py`.
 
 ```python
 class MyNewSearchProvider(BaseSearchProvider):

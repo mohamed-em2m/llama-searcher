@@ -1262,7 +1262,7 @@ wheels = [
 ]
 
 [[package]]
-name = "llama-search"
+name = "llama-searcher"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

@@ -1,6 +1,6 @@
 from dynaconf import Dynaconf
 import openai
-from llama_search.utils.logger import log_print
+from llama_searcher.utils.logger import log_print
 
 settings = Dynaconf(
     envvar_prefix="DYNACONF",

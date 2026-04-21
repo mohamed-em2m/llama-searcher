@@ -2,8 +2,8 @@ import asyncio
 from typing import Optional
 import httpx
 import requests
-from llama_search.utils.logger import logger, log_print
-from llama_search.core.cleaners import get_html_content
+from llama_searcher.utils.logger import logger, log_print
+from llama_searcher.core.cleaners import get_html_content
 
 
 async def fetch_content_static(

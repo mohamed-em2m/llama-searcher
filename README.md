@@ -51,7 +51,7 @@ FIRECRAWL_API_KEY = "your_key"
 ### 2. Basic Usage
 
 ```python
-from llama_search.api.search import get_events
+from llama_searcher.api.search import get_events
 
 # Use multiple engines at once
 result = get_events(
@@ -64,13 +64,13 @@ print(result)
 ### 3. Running the API
 
 ```bash
-uv run python -m llama_search.api.app
+uv run python -m llama_searcher.api.app
 ```
 
 ### 4. Running the MCP Server (for AI Agents)
 
 ```bash
-uv run python -m llama_search.mcp_server
+uv run python -m llama_searcher.mcp_server
 ```
 
 ## 🏗️ Architecture

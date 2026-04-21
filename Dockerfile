@@ -9,7 +9,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 COPY pyproject.toml .
 COPY uv.lock .
 COPY README.md .
-COPY llama_search/ llama_search/
+COPY llama_searcher/ llama_searcher/
 
 # Install dependencies using uv
 RUN uv sync --frozen
@@ -18,4 +18,4 @@ RUN uv sync --frozen
 EXPOSE 8000
 
 # Run the FastAPI server
-CMD ["uv", "run", "python", "-m", "llama_search.api.app"]
+CMD ["uv", "run", "python", "-m", "llama_searcher.api.app"]

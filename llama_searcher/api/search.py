@@ -3,7 +3,7 @@ import traceback
 import tiktoken
 from langchain_core.tools import tool
 
-from llama_search.core.search_providers import (
+from llama_searcher.core.search_providers import (
     BingSearchProvider,
     BraveSearchProvider,
     ExaSearchProvider,
@@ -15,15 +15,15 @@ from llama_search.core.search_providers import (
     TavilySearchProvider,
     ZenserpSearchProvider,
 )
-from llama_search.services.scraper_service import scrape_links
-from llama_search.services.search_service import (
+from llama_searcher.services.scraper_service import scrape_links
+from llama_searcher.services.search_service import (
     extract_events,
     extract_events_all,
     extract_events_from_search,
     format_extracted_events,
 )
-from llama_search.utils.config import settings
-from llama_search.utils.logger import log_print, logger
+from llama_searcher.utils.config import settings
+from llama_searcher.utils.logger import log_print, logger
 
 
 def get_token_length(text: str) -> int:
