@@ -1,30 +1,44 @@
 import traceback
+
+import tiktoken
 from langchain_core.tools import tool
 
-from Agent.utils import get_token_length
-from Cache.Cache import cache_register
-from llama_search.utils.logger import logger, log_print
-from llama_search.utils.config import settings
-
 from llama_search.core.search_providers import (
-    GoogleSearchProvider,
     BingSearchProvider,
-    FirecrawlSearchProvider,
+    BraveSearchProvider,
     ExaSearchProvider,
-    TavilySearchProvider,
+    FirecrawlSearchProvider,
+    GoogleSearchProvider,
     PerplexitySearchProvider,
     SerpApiSearchProvider,
     SerperDevSearchProvider,
-    BraveSearchProvider,
+    TavilySearchProvider,
     ZenserpSearchProvider,
 )
+from llama_search.services.scraper_service import scrape_links
 from llama_search.services.search_service import (
     extract_events,
+    extract_events_all,
     extract_events_from_search,
     format_extracted_events,
-    extract_events_all,
 )
-from llama_search.services.scraper_service import scrape_links
+from llama_search.utils.config import settings
+from llama_search.utils.logger import log_print, logger
+
+
+def get_token_length(text: str) -> int:
+    try:
+        return len(tiktoken.get_encoding("cl100k_base").encode(text))
+    except Exception:
+        return len(text) // 4
+
+
+class _DummyCache:
+    def set_auto(self, key, value):
+        pass
+
+
+cache_register = _DummyCache()
 
 
 @tool

@@ -5,7 +5,6 @@ import pytz
 import logging
 import openai
 from llama_search.utils.logger import log_print
-from Agent.SubAgents.tool_prompts import system_template_summarize
 
 
 class AnalysisAgent:
@@ -14,11 +13,11 @@ class AnalysisAgent:
         log_print("INFO", f"Initialized AnalysisAgent with model: {model_name}")
         self.client = openai.AsyncOpenAI(
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
-            api_key=os.getenv("Gemini_API_KEY"),
+            api_key=os.getenv("Gemini_API_KEY", "dummy_key"),
         )
         self.client_2 = openai.AsyncOpenAI(
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
-            api_key=os.getenv("Gemini_API_KEY_2"),
+            api_key=os.getenv("Gemini_API_KEY_2", "dummy_key"),
         )
         self.maxmuim_concurent = maxmuim_concurent
         self.max_client_1 = 0
@@ -41,18 +40,16 @@ class AnalysisAgent:
         try:
             if max_queue[0] < self.maxmuim_concurent:
                 max_queue[0] += 1
-                chat_dict = system_template_summarize.invoke(
+                messages = [
                     {
-                        "date": f"{date},{day}",
-                        "user_query": user_query,
-                        "scraped_data": text_to_summarize,
-                    }
-                ).model_dump()
-
-                messages = []
-                for item in chat_dict["messages"]:
-                    role = "user" if item["type"] == "human" else item["type"]
-                    messages.append({"role": role, "content": item["content"]})
+                        "role": "system",
+                        "content": "You are a highly capable AI assistant doing extraction and summarization of search scraping data for the user request.",
+                    },
+                    {
+                        "role": "user",
+                        "content": f"Date context: {date},{day}\nUser Query: {user_query}\nPlease summarize the below data efficiently:\n\n{text_to_summarize}",
+                    },
+                ]
 
                 if self.max_client_1 < self.maxmuim_concurent // 2:
                     client = self.client
