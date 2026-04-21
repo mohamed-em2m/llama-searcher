@@ -3,7 +3,7 @@ from llama_search.api.search import get_events
 from llama_search.utils.logger import logger
 
 # Create an MCP server
-mcp = FastMCP("llama-search")
+mcp = FastMCP("llama-searcher")
 
 
 @mcp.tool()

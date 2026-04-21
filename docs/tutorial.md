@@ -1,12 +1,12 @@
 # 🦙 llama-searcher Tutorial
 
-Welcome to the comprehensive tutorial for **llama-search**! This guide will take you from installation to advanced orchestration of multi-engine AI searches.
+Welcome to the comprehensive tutorial for **llama-searcher**! This guide will take you from installation to advanced orchestration of multi-engine AI searches.
 
 ---
 
 ## 📖 Introduction
 
-**llama-search** is a professional-grade search orchestration framework. It acts as a bridge between your AI agents and the vast information on the web. Unlike simple search wrappers, `llama-search`:
+**llama-searcher** is a professional-grade search orchestration framework. It acts as a bridge between your AI agents and the vast information on the web. Unlike simple search wrappers, `llama-searcher`:
 
 - **Multiplexes** 10+ search engines concurrently.
 - **Cleans** HTML into LLM-ready Markdown.
@@ -29,7 +29,7 @@ uv sync
 
 ### 2. Configuration
 
-`llama-search` uses [Dynaconf](https://www.dynaconf.com/) for secure configuration.
+`llama-searcher` uses [Dynaconf](https://www.dynaconf.com/) for secure configuration.
 
 1. Copy `.secrets.toml` template.
 2. Add your API keys.
@@ -53,7 +53,7 @@ PERPLEXITY_API_KEY = "your_perplexity_key"
 
 ### Simple Multi-Engine Search
 
-The core power of `llama-search` lies in the `get_events` tool. It allows you to query multiple engines with a single call.
+The core power of `llama-searcher` lies in the `get_events` tool. It allows you to query multiple engines with a single call.
 
 ```python
 from llama_search.api.search import get_events
@@ -73,7 +73,7 @@ print(results)
 
 ## 🌐 FastAPI & REST Access
 
-`llama-search` can be run as a standalone web service, allowing you to integrate it with any language or platform.
+`llama-searcher` can be run as a standalone web service, allowing you to integrate it with any language or platform.
 
 ### Running the API
 
@@ -92,7 +92,7 @@ The server will start at `http://0.0.0.0:8000`.
 
 ## 🤖 MCP (Model Context Protocol) Support
 
-Integrate `llama-search` directly into AI agents like Claude Desktop or other MCP-compatible platforms.
+Integrate `llama-searcher` directly into AI agents like Claude Desktop or other MCP-compatible platforms.
 
 ### Running the MCP Server
 
@@ -107,7 +107,7 @@ Add this to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "llama-search": {
+    "llama-searcher": {
       "command": "uv",
       "args": [
         "--directory",

@@ -7,7 +7,7 @@ from llama_search.api.search import get_events
 from llama_search.utils.logger import logger
 
 app = FastAPI(
-    title="llama-search API",
+    title="llama-searcher API",
     description="Professional Search Orchestration API for AI Agents and RAG pipelines.",
     version="0.1.0",
 )

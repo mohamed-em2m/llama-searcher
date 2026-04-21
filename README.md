@@ -1,14 +1,14 @@
 # 🦙 llama-searcher
 
 <p align="center">
-  <img src="assets/llama-search.png" alt="llama-search logo" width="600">
+  <img src="assets/llama-search.png" alt="llama-searcher logo" width="600">
 </p>
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/mohamed-em2m/llm-search-tool/actions/workflows/ci.yml/badge.svg)](https://github.com/mohamed-em2m/llm-search-tool/actions/workflows/ci.yml)
 
-**llama-search** is a professional-grade search orchestration framework designed for AI Agents and RAG (Retrieval-Augmented Generation) pipelines. It unifies traditional SEO/SERP APIs with modern neural search engines, transforming raw web data into clean, LLM-ready markdown.
+**llama-searcher** is a professional-grade search orchestration framework designed for AI Agents and RAG (Retrieval-Augmented Generation) pipelines. It unifies traditional SEO/SERP APIs with modern neural search engines, transforming raw web data into clean, LLM-ready markdown.
 
 ---
 
